@@ -1,0 +1,26 @@
+alias c='clear'
+alias ..='cd ..'
+alias ...='cd .. && cd ..'
+alias ping='ping -c 3'
+alias nap='systemctl suspend -i'
+
+# Pretty prompt
+export PS1="\[\e[0;32m\]\]\[\] \[\e[1;32m\]\]\t \[\e[0;2m\]\]\w \[\e[0m\]\]\[$\] "
+
+# Colors
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
+# Ask for confirmation when 'prod' is in a command
+prod_command_trap () {
+  if [[ $BASH_COMMAND == *prod* ]]
+  then
+    read -p "Are you sure you want to run this command on prod [Y/n]? " -n 1 -r
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+      echo -e "\nRunning command \"$BASH_COMMAND\" \n"
+    else
+      echo -e "\nCommand was not run.\n"
+      return 1
+    fi
+  fi

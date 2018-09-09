@@ -1,17 +1,22 @@
+# https://github.com/CobraKenji/dotfiles/.bash-profile
+
 alias c='clear'
 alias ..='cd ..'
 alias ...='cd .. && cd ..'
 alias ping='ping -c 3'
 alias nap='systemctl suspend -i'
 
-# Pretty prompt
+# mkdir and then cd into it
+mkcd() { mkdir -p $1; cd $1 }
+
+# pretty prompt
 export PS1="\[\e[0;32m\]\]\[\] \[\e[1;32m\]\]\t \[\e[0;2m\]\]\w \[\e[0m\]\]\[$\] "
 
-# Colors
+# colors
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
-# Ask for confirmation when 'prod' is in a command
+# Prompt confirmation when 'prod' is in a command
 prod_command_trap () {
   if [[ $BASH_COMMAND == *prod* ]]
   then

@@ -1,0 +1,8 @@
+[user]
+	  name = Wesley Spinks
+	  email = wspinks@redhat.com
+  
+[core]
+    editor = vim
+[color]
+    ui = true

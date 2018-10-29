@@ -5,9 +5,8 @@ alias ..='cd ..'
 alias ...='cd .. && cd ..'
 alias ping='ping -c 3'
 alias nap='systemctl suspend -i'
+alias ll='ls -lah'
 
-# mkdir and then cd into it
-mkcd() { mkdir -p $1; cd $1 }
 
 # pretty prompt
 export PS1="\[\e[0;32m\]\]\[\] \[\e[1;32m\]\]\t \[\e[0;2m\]\]\w \[\e[0m\]\]\[$\] "

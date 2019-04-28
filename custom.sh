@@ -13,7 +13,7 @@ alias ping='ping -c 3'
 alias tristram='ssh tristram'
 alias ubu17='ssh bu17-desktop'
 alias midgar='ssh midgar'
-aliad fortcondor='ssh fortcondor'
+alias fortcondor='ssh fortcondor'
 
 # get current branch in git repo
 function parse_git_branch() {
